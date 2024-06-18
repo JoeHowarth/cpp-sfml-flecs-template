@@ -8,6 +8,7 @@
 #include "layered_drawer.h"
 #include "text.h"
 #include "vectors.h"
+#include "logging.h"
 
 // Note: Utility globals defined at bottom of the file
 

@@ -11,6 +11,8 @@
 sf::View initWindow(sf::RenderWindow& window);
 
 int main() {
+    initLogger();
+
     auto      window = sf::RenderWindow{{1920u, 1080u}, "Base Template"};
     sf::View  view   = initWindow(window);
     sf::Clock frameClock;
@@ -45,12 +47,23 @@ int main() {
             }
         }
 
+        json j = {
+            {
+                "hi",
+                frame,
+            },
+            {"deltaTime", deltaTime.asMilliseconds()}
+        };
+        logger->info(j.dump());
+
         // ensure that the rest system is run (and any user defined systems)
         ecs.progress(deltaTime.asSeconds());
 
         // example usage of debugDrawer and textDrawer
         debugDrawer.lineStrip({{0, 0}, {100, 0}, {100, 100}, {0, 100}, {0, 0}});
-        textDrawer.draw({.pos = {0, 0}, .size = 44, .color = sf::Color::White}, "Hello BOb");
+        textDrawer.draw(
+            {.pos = {0, 0}, .size = 44, .color = sf::Color::White}, "Hello BOb"
+        );
 
         textDrawer.display(window);
         debugDrawer.display(window);

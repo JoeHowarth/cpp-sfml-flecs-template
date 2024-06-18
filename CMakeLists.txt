@@ -32,8 +32,21 @@ add_executable(
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+if(NOT TARGET spdlog)
+    # Stand-alone build
+    find_package(spdlog REQUIRED)
+endif()
+
+# ---------------------------------------------------------------------------------------
+# Example of using pre-compiled library
+# ---------------------------------------------------------------------------------------
+add_executable(example example.cpp)
+target_link_libraries(example PRIVATE spdlog::spdlog)
+
 # Find and link dependencies (example: fmt)
 find_package(fmt CONFIG REQUIRED)
+# find_package(spdlog CONFIG REQUIRED)
+find_package(nlohmann_json 3.2.0 REQUIRED)
 # find_package(flecs CONFIG REQUIRED)
 find_package(SFML COMPONENTS system window graphics CONFIG REQUIRED)
 
@@ -44,6 +57,7 @@ target_link_libraries(${PROJECT_NAME}
         sfml-system
         fmt::fmt
         flecs::flecs
+        # nlohmann_json::nlohmann_json
 )
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
