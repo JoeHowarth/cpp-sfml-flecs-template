@@ -36,3 +36,4 @@
 /builds
 .DS_Store
 /build
+/.cache
