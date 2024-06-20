@@ -6,7 +6,7 @@
 
 #include "utils/util.h"
 
-sf::View initWindow(sf::RenderWindow &window);
+sf::View initWindow(sf::RenderWindow& window);
 
 int main() {
     auto      window = sf::RenderWindow{{1920u, 1080u}, "Base Template"};
@@ -58,7 +58,7 @@ int main() {
     }
 }
 
-sf::View initWindow(sf::RenderWindow &window) {
+sf::View initWindow(sf::RenderWindow& window) {
     window.setFramerateLimit(60);
     sf::Vector2u windowSize = window.getSize();
     sf::View     view;

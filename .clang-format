@@ -22,3 +22,5 @@ BinPackParameters: false
 # BreakAfterFunctionDefinitionParameters: true
 Cpp11BracedListStyle: true
 PenaltyReturnTypeOnItsOwnLine: 0
+PointerAlignment: Left
+DerivePointerAlignment: false

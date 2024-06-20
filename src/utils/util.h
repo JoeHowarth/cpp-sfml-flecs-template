@@ -29,8 +29,8 @@ auto now() {
 /**** Flecs ****/
 
 struct DeferGuard {
-    flecs::world &ecs;
-    DeferGuard(flecs::world &ecs) : ecs(ecs) {
+    flecs::world& ecs;
+    DeferGuard(flecs::world& ecs) : ecs(ecs) {
         ecs.defer_begin();
     }
     ~DeferGuard() {
@@ -51,7 +51,7 @@ match(Ts...) -> match<Ts...>;
 
 template <typename... Ts, typename... Fs>
 constexpr decltype(auto)
-operator|(std::variant<Ts...> const &v, match<Fs...> const &match) {
+operator|(std::variant<Ts...> const& v, match<Fs...> const& match) {
     return std::visit(match, v);
 }
 
