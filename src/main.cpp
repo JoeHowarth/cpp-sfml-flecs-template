@@ -3,8 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <cassert>
-#include <iostream>
-#include <random>
 
 #include "utils/util.h"
 
@@ -50,7 +48,9 @@ int main() {
 
         // example usage of debugDrawer and textDrawer
         debugDrawer.lineStrip({{0, 0}, {100, 0}, {100, 100}, {0, 100}, {0, 0}});
-        textDrawer.draw({.pos = {0, 0}, .size = 44, .color = sf::Color::White}, "Hello BOb");
+        textDrawer.draw(
+            {.pos = {0, 0}, .size = 44, .color = sf::Color::White}, "Hello BOb"
+        );
 
         textDrawer.display(window);
         debugDrawer.display(window);

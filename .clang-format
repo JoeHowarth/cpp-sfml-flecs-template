@@ -19,6 +19,8 @@ BreakBeforeBinaryOperators: None
 BreakConstructorInitializers: BeforeComma
 AllowShortEnumsOnASingleLine: false
 BinPackParameters: false
-BreakAfterFunctionDefinitionParameters: true
+# BreakAfterFunctionDefinitionParameters: true
 Cpp11BracedListStyle: true
 PenaltyReturnTypeOnItsOwnLine: 0
+PointerAlignment: Left
+DerivePointerAlignment: false

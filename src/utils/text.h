@@ -2,8 +2,8 @@
 
 #include <fmt/core.h>
 
-#include "SFML/Graphics.hpp"
 #include "vectors.h"
+#include <sstream>
 
 /**** Text ******/
 
